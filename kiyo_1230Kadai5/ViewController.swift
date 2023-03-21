@@ -17,12 +17,10 @@ class ViewController: UIViewController {
 
         if numeratorNumber.text == "" {
             commonAlert(alertMessage: "割られる数を入力して下さい")
-            return
         }
 
         if denominatorNumber.text == "" {
             commonAlert(alertMessage: "割る数を入力して下さい")
-            return
         }
 
         let inputNumeratorNumber = Int(numeratorNumber.text ?? "") ?? 0
