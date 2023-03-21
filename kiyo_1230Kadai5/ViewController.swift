@@ -18,27 +18,31 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func calculationButton(_ sender: Any) {
+
+        if numeratorNumber.text == "" {
+        let alertA = UIAlertController(title: "課題5", message: "割られる数を入力して下さい", preferredStyle: .alert)
+            alertA.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alertA, animated: true, completion: nil)
+            return
+        }
+
+        if denominatorNumber.text == "" {
+        let alertB = UIAlertController(title: "課題5", message: "割る数を入力して下さい", preferredStyle: .alert)
+            alertB.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alertB, animated: true, completion: nil)
+            return
+        }
+
         let inputNumeratorNumber = Int(numeratorNumber.text ?? "") ?? 0
         let inputDenominatorNumber = Int(denominatorNumber.text ?? "") ?? 0
-        let result = inputNumeratorNumber / inputDenominatorNumber
 
-//        if inputNumeratorNumberが空の場合 {
-//            アラートダイアログAを表示する
-//        let alertA = UIAlertController(title: "課題5", message: "割られる数を入力して下さい", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(alert, animated: true, completion: nil)
-//        } else if inputDenominatorNumberがからの場合 {
-//            アラートダイアログBを表示する
-//        let alertB = UIAlertController(title: "課題5", message: "割る数を入力して下さい", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(alert, animated: true, completion: nil)
-//        } else if inputDenominatorNumberが0の場合 {
-//            アラートダイアログCを表示する
-//        let alertC = UIAlertController(title: "課題5", message: "割る数には0を入力しないで下さい", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(alert, animated: true, completion: nil)
-//        } else {
-            resultLabel.text = "\(result)"
-//        }
+        if inputDenominatorNumber == 0 {
+            let alertC = UIAlertController(title: "課題5", message: "割る数には0を入力しないで下さい", preferredStyle: .alert)
+            alertC.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alertC, animated: true, completion: nil)
+        }
+
+        let result = Double(inputNumeratorNumber) / Double(inputDenominatorNumber)
+            resultLabel.text = result.description
     }
 }
