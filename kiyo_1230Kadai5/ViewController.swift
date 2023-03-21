@@ -20,28 +20,25 @@ class ViewController: UIViewController {
     @IBAction private func calculationButton(_ sender: Any) {
         let inputNumeratorNumber = Int(numeratorNumber.text ?? "") ?? 0
         let inputDenominatorNumber = Int(denominatorNumber.text ?? "") ?? 0
-
-
         let result = inputNumeratorNumber / inputDenominatorNumber
-        resultLabel.text = "\(result)"
 
+//        if inputNumeratorNumberが空の場合 {
+//            アラートダイアログAを表示する
+//        let alertA = UIAlertController(title: "課題5", message: "割られる数を入力して下さい", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alert, animated: true, completion: nil)
+//        } else if inputDenominatorNumberがからの場合 {
+//            アラートダイアログBを表示する
+//        let alertB = UIAlertController(title: "課題5", message: "割る数を入力して下さい", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alert, animated: true, completion: nil)
+//        } else if inputDenominatorNumberが0の場合 {
+//            アラートダイアログCを表示する
+//        let alertC = UIAlertController(title: "課題5", message: "割る数には0を入力しないで下さい", preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: .default))
+//            self.present(alert, animated: true, completion: nil)
+//        } else {
+            resultLabel.text = "\(result)"
+//        }
     }
-    // TODO: アラートダイアログAを作成する
-    // TODO: leftTextFieldが空の場合アラートダイアログAを表示する
-    // TODO: アラートダイアログA「title:課題5、subtitle:割られる数を入力して下さい、button:OK」
-
-
-
-    // TODO: アラートダイアログBを作成する
-    // TODO: rightTextFieldが空の場合アラートダイアログBを表示する
-    // TODO: アラートダイアログB「title:課題5、subtitle:割る数を入力して下さい、button:OK」
-
-
-
-    // TODO: アラートダイアログBを作成する
-    // TODO: leftTextFieldが「0」の場合アラートダイアログCを表示する
-    // TODO: アラートダイアログC「title:課題5、subtitle:割る数には0を入力しないで下さい、button:OK」
-
-
 }
-
