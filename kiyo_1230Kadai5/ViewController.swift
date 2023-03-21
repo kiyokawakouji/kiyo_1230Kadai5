@@ -9,21 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
-
     @IBOutlet private weak var resultLabel: UILabel!
     @IBOutlet private weak var numeratorNumber: UITextField!
     @IBOutlet private weak var denominatorNumber: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
 
     @IBAction private func calculationButton(_ sender: Any) {
+        let inputNumeratorNumber = Int(numeratorNumber.text ?? "") ?? 0
+        let inputDenominatorNumber = Int(denominatorNumber.text ?? "") ?? 0
+
+
+        let result = inputNumeratorNumber / inputDenominatorNumber
+        resultLabel.text = "\(result)"
+
     }
-    // TODO: 割り算のロジックを作る
-    // TODO: resultLabelに値を渡す
     // TODO: アラートダイアログAを作成する
     // TODO: leftTextFieldが空の場合アラートダイアログAを表示する
     // TODO: アラートダイアログA「title:課題5、subtitle:割られる数を入力して下さい、button:OK」
