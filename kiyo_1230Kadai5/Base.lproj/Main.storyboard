@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="計算" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvX-dj-xMi">
-                                <rect key="frame" x="179" y="521.66666666666663" width="35" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVn-UQ-HQv">
                                 <rect key="frame" x="120" y="211" width="153" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -49,21 +43,34 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBL-XR-25p">
+                                <rect key="frame" x="159" y="554.66666666666663" width="75" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="計算"/>
+                                <connections>
+                                    <action selector="calculationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="96Y-aT-D3f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3GK-4T-X6A" firstAttribute="top" secondItem="rVn-UQ-HQv" secondAttribute="bottom" constant="148.66999999999999" id="0hG-Ke-C9h"/>
+                            <constraint firstItem="IBL-XR-25p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="5s9-GN-CuZ"/>
                             <constraint firstItem="3GK-4T-X6A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="9B2-co-YSz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GvX-dj-xMi" secondAttribute="bottom" constant="276" id="LpE-8w-Isc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IBL-XR-25p" secondAttribute="bottom" constant="229" id="PhR-7V-eg5"/>
                             <constraint firstItem="rVn-UQ-HQv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="Vhu-Lt-5mv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GvX-dj-xMi" secondAttribute="trailing" constant="179" id="VxD-3l-xkH"/>
-                            <constraint firstItem="GvX-dj-xMi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="179" id="c6E-yy-l5J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IBL-XR-25p" secondAttribute="trailing" constant="159" id="dvb-iU-25J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rVn-UQ-HQv" secondAttribute="trailing" constant="120" id="fo3-Lq-SRb"/>
                             <constraint firstItem="rVn-UQ-HQv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="152" id="ntL-Sm-Pfs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3GK-4T-X6A" secondAttribute="trailing" constant="64" id="vPv-7q-q2Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="denominatorNumber" destination="GoI-4y-LzX" id="Jtr-YO-MSZ"/>
+                        <outlet property="numeratorNumber" destination="lvR-Z9-9OJ" id="aMA-CQ-Qh4"/>
+                        <outlet property="resultLabel" destination="rVn-UQ-HQv" id="wni-Xy-Eyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

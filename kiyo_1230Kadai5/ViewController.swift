@@ -9,14 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
+    @IBOutlet private weak var resultLabel: UILabel!
+    @IBOutlet private weak var numeratorNumber: UITextField!
+    @IBOutlet private weak var denominatorNumber: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    // TODO: UI部品の設置 → textField x2、label x2、button
 
-
+    @IBAction private func calculationButton(_ sender: Any) {
+    }
     // TODO: 割り算のロジックを作る
     // TODO: resultLabelに値を渡す
     // TODO: アラートダイアログAを作成する
