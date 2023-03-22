@@ -15,23 +15,22 @@ class ViewController: UIViewController {
 
     @IBAction private func calculationButton(_ sender: Any) {
 
-        if numeratorNumber.text == "" {
+        guard let inputNumeratorNumber = Double(numeratorNumber.text ?? "") else {
             commonAlert(alertMessage: "割られる数を入力して下さい")
+            return
         }
 
-        if denominatorNumber.text == "" {
+        guard let inputDenominatorNumber = Double(denominatorNumber.text ?? "") else {
             commonAlert(alertMessage: "割る数を入力して下さい")
+            return
         }
 
-        let inputNumeratorNumber = Int(numeratorNumber.text ?? "") ?? 0
-        let inputDenominatorNumber = Int(denominatorNumber.text ?? "") ?? 0
-
-        if inputDenominatorNumber == 0 {
+        guard inputDenominatorNumber != 0 else {
             commonAlert(alertMessage: "割る数には0を入力しないで下さい")
+            return
         }
 
-        let result = Double(inputNumeratorNumber) / Double(inputDenominatorNumber)
-        resultLabel.text = result.description
+        resultLabel.text = "\(inputNumeratorNumber / inputDenominatorNumber)"
     }
 
     private func commonAlert(alertMessage: String) {
